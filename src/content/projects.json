@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Hybrid Core",
+    "owner": "Gecut",
+    "image_url": "https://avatars.githubusercontent.com/u/96390529",
+    "github_url": "https://github.com/gecut/hybrid-core",
+    "description": "A Node.js framework for building high-performance, scalable apps with a suite of development tools."
+  },
+  {
+    "name": "Hybrid Ui",
+    "owner": "Gecut",
+    "image_url": "https://repository-images.githubusercontent.com/766843623/994ddf73-4a7e-4b72-87f5-88caa3478a93",
+    "github_url": "https://github.com/gecut/hybrid-ui",
+    "description": "A cutting-edge web front-end framework for building high-performance, memory-safe, and visually stunning applications with streamlined development and exceptional user experiences.",
+    "url": "https://ui.hybrid.gecut.ir"
+  },
+  {
+    "name": "Hybrid Theme Builder",
+    "owner": "Gecut",
+    "image_url": "https://repository-images.githubusercontent.com/810232593/146fe163-0510-4c9a-8daf-ea4452b6679b",
+    "github_url": "https://github.com/gecut/hybrid-theme-builder",
+    "description": "A theme builder for Hybrid UI, allowing developers to create custom themes for their applications.",
+    "url": "https://builder.hybrid.gecut.ir"
+  }
+]

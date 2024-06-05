@@ -1,0 +1,7 @@
+@import '@gecut/styles/css';
+@import './h167.css';
+@import './h292.css';
+
+.gecut-list-item .gecut-list-item-body {
+  width: 100%;
+}
