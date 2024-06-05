@@ -62,5 +62,8 @@
   ],
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///home/mm25zamanian/Codes/mm25zamanian.ir/.github/workflows/deploy.yml"
   }
 }

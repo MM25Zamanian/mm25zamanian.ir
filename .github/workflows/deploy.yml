@@ -12,8 +12,8 @@ on:
 
 
 env:
-  USER: gecut/habibi-university
-  NAME: pwa
+  USER: MM25Zamanian
+  NAME: mm25zamanian.ir
   CONTEXT: .
 
 jobs:
@@ -94,13 +94,3 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-
-  darkube_deploy_habibiu-pwa_gecut_sindad-c15:
-    container: hamravesh/darkube-cli:v1.1
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: darkube-cli deploy
-      run: darkube deploy --token ${{secrets.DEPLOY_TOKEN_HABIBIU_PWA_GECUT_SINDAD_C15}}
-        --app-id ${{secrets.APP_ID_HABIBIU_PWA_GECUT_SINDAD_C15}} --image-tag latest
-        --job-id ${GITHUB_RUN_ID}
