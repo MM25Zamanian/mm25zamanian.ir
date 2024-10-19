@@ -9,7 +9,7 @@ import githubIcon from '../assets/svgs/github.svg?raw';
 
 export function projectsPage() {
   return html`
-    <div class="py-4 w-full flex flex-col gap-4">
+    <div class="py-4 w-full flex flex-col gap-4" dir="ltr">
       ${map(projects, (project) => {
         const image = new Image();
         const lazyLoadImage = new Image();

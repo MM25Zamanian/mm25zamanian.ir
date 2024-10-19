@@ -7,7 +7,7 @@ import {routerContext} from './context/router.context';
 import './router';
 import './styles/global.css';
 import {header} from './components/header';
-import { footer } from './components/footer';
+import {footer} from './components/footer';
 
 render(
   html`

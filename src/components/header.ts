@@ -6,6 +6,7 @@ import {gecutContext} from '@gecut/lit-helper/directives/context.js';
 import {classMap} from 'lit/directives/class-map.js';
 import {titleContext} from '../context/title.context';
 import {resolveRouterPath} from '../router';
+import {i18n} from '../i18n/index';
 import menuIcon from '../assets/svgs/menu.svg?raw';
 import menuCloseIcon from '../assets/svgs/menu-close.svg?raw';
 import aboutIcon from '../assets/svgs/about.svg?raw';
@@ -13,7 +14,7 @@ import projectsIcon from '../assets/svgs/projects.svg?raw';
 
 export function header() {
   return html`
-    <header class="fixed top-0 inset-x-0 bg-surfaceContainer translucent flex flex-col">
+    <header class="fixed top-0 inset-x-0 bg-surfaceContainer translucent flex flex-col z-fixed">
       <div class="max-w-screen-sm mx-auto flex justify-between py-4 gap-4 w-full h-full relative px-4">
         <div class="size-10 rounded-full overflow-hidden m-1">
           <img src="/icon-192-maskable.png" class="rounded-full" />
@@ -23,21 +24,24 @@ export function header() {
           ${gecutContext(titleContext, (title) => title)}
         </div>
 
-        ${gecutIconButton({
-          type: 'normal',
-          toggle: true,
-          events: {
-            change: (event: Event) => {
-              const target = event.target as HTMLInputElement | null;
+        ${gecutContext(menuOpenContext, (checked) =>
+          gecutIconButton({
+            type: 'normal',
+            toggle: true,
+            checked,
+            events: {
+              change: (event: Event) => {
+                const target = event.target as HTMLInputElement | null;
 
-              nextAnimationFrame(() => menuOpenContext.setValue(target?.checked ?? false));
+                nextAnimationFrame(() => (menuOpenContext.value = target?.checked ?? false));
+              },
             },
-          },
-          selectedIcon: {
-            svg: menuCloseIcon,
-          },
-          svg: menuIcon,
-        })}
+            selectedIcon: {
+              svg: menuCloseIcon,
+            },
+            svg: menuIcon,
+          }),
+        )}
       </div>
       <div class="max-w-screen-sm w-full mx-auto">
         ${gecutContext(
@@ -51,7 +55,7 @@ export function header() {
               })}
             >
               ${gecutItem({
-                headline: 'About',
+                headline: i18n.msg('About'),
                 href: resolveRouterPath('about'),
                 leading: {
                   element: 'icon',
@@ -59,7 +63,7 @@ export function header() {
                 },
               })}
               ${gecutItem({
-                headline: 'Projects',
+                headline: i18n.msg('Projects'),
                 href: resolveRouterPath('projects'),
                 leading: {
                   element: 'icon',

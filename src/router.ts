@@ -14,7 +14,7 @@ import {notFoundPage} from './pages/not-found.page';
 import {aboutPage} from './pages/about.page';
 import {i18n} from './i18n';
 import {titleContext} from './context/title.context';
-import { projectsPage } from './pages/projects.page';
+import {projectsPage} from './pages/projects.page';
 
 export const router = new Router({
   plugins: [scrollToTop, resetFocus, appName('MM25Zamanian | ')],
@@ -56,8 +56,8 @@ export function resolveRouterPath(unresolvedPath?: string) {
 }
 
 export const debouncedRender = debounce(() => {
-  routerContext.setValue(router.render());
-  titleContext.setValue(router.context.title.replace('MM25Zamanian | ', ''));
+  routerContext.value = router.render();
+  titleContext.value = router.context.title.replace('MM25Zamanian | ', '');
 }, 1000 / 60);
 
 router.addEventListener('route-changed', debouncedRender);

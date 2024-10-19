@@ -23,7 +23,7 @@ export default defineConfig({
   plugins: [
     Unfonts({
       fontsource: {
-        families: ['Varela Round'],
+        families: ['vazirmatn'],
       },
       google: {
         families: [

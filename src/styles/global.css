@@ -5,3 +5,7 @@
 .gecut-list-item .gecut-list-item-body {
   width: 100%;
 }
+
+* {
+  user-select: none;
+}

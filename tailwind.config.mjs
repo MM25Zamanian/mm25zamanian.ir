@@ -35,8 +35,8 @@ export default {
     ...tailwindConfig.theme,
 
     fontFamily: {
-      'varela-round': [
-        ['Varela Round', 'sans-serif', ...systemFont],
+      'vazirmatn': [
+        ['vazirmatn', 'sans-serif', ...systemFont],
         {
           fontFeatureSettings: '"calt" 1, "tnum" 0',
         },
